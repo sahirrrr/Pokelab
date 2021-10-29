@@ -2,4 +2,7 @@
     <string name="app_name">Pokelab</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pokelab">Pokelab</string>
+    <string name="bulbasaur">bulbasaur image</string>
+    <string name="pokemon_bulbasaur">Bulbasaur</string>
 </resources>
