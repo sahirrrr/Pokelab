@@ -18,8 +18,8 @@ interface PokemonDao {
     fun getPokemonList() : Flowable<List<PokemonListEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertDetailPokemon(pokemon : DetailPokemonEntity) : Completable
+    fun insertDetailPokemon(pokemon : List<DetailPokemonEntity>) : Completable
 
     @Query("select * from detail_pokemon_table where id = :id")
-    fun getDetailPokemon(id: String) : Flowable<DetailPokemonEntity>
+    fun getDetailPokemon(id: String) : Flowable<List<DetailPokemonEntity>>
 }

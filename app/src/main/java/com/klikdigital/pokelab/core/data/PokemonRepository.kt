@@ -45,16 +45,16 @@ class PokemonRepository(
             }
         }.asFlowAble()
 
-    override fun getDetailPokemon(id: String): Flowable<Resource<DetailPokemonModel>> =
-        object : NetworkBoundResource<DetailPokemonModel, DetailPokemonResponse>() {
-            override fun loadFromDB(): Flowable<DetailPokemonModel> {
+    override fun getDetailPokemon(id: String): Flowable<Resource<List<DetailPokemonModel>>> =
+        object : NetworkBoundResource<List<DetailPokemonModel>, DetailPokemonResponse>() {
+            override fun loadFromDB(): Flowable<List<DetailPokemonModel>> {
                 Log.d("detail", "loadFromDB")
                  return localDataSource.getDetailPokemon(id).map { DataMapper.mapDetailPokemonEntitiesToDomain(it) }
             }
 
-            override fun shouldFetch(data: DetailPokemonModel?): Boolean {
+            override fun shouldFetch(data: List<DetailPokemonModel>?): Boolean {
                 Log.d("detail", "shouldFetch: ${data == null}")
-                return true
+                return data == null || data.isEmpty()
             }
 
             override fun saveCallResult(data: DetailPokemonResponse) {
@@ -70,7 +70,6 @@ class PokemonRepository(
                 Log.d("detail", "createCall")
                 return remoteDataSource.getDetailPokemon(id)
             }
-            
         }.asFlowAble()
 
 }

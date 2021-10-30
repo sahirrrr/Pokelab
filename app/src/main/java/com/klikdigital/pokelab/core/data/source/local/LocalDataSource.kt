@@ -11,7 +11,7 @@ class LocalDataSource(private val dao: PokemonDao) {
 
     fun getPokemonList() : Flowable<List<PokemonListEntity>> = dao.getPokemonList()
 
-    fun insertDetailPokemon(pokemon : DetailPokemonEntity) = dao.insertDetailPokemon(pokemon)
+    fun insertDetailPokemon(pokemon : List<DetailPokemonEntity>) = dao.insertDetailPokemon(pokemon)
 
-    fun getDetailPokemon(id : String) : Flowable<DetailPokemonEntity> = dao.getDetailPokemon(id)
+    fun getDetailPokemon(id : String) : Flowable<List<DetailPokemonEntity>> = dao.getDetailPokemon(id)
 }

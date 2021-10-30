@@ -11,7 +11,7 @@ class PokemonInteractor(private val pokemonRepositoryImp : IPokemonRepository): 
         return pokemonRepositoryImp.getPokemonList()
     }
 
-    override fun getDetailPokemon(id: String): Flowable<Resource<DetailPokemonModel>> {
+    override fun getDetailPokemon(id: String): Flowable<Resource<List<DetailPokemonModel>>> {
         return pokemonRepositoryImp.getDetailPokemon(id)
     }
 }

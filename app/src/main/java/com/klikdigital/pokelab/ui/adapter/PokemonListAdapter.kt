@@ -1,16 +1,14 @@
 package com.klikdigital.pokelab.ui.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.klikdigital.pokelab.R
 import com.klikdigital.pokelab.core.utils.Helper
 import com.klikdigital.pokelab.databinding.ItemPokemonBinding
 import com.klikdigital.pokelab.domain.model.PokemonListModel
+import com.klikdigital.pokelab.ui.detail.DetailActivity
 
 class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
 
@@ -37,13 +35,17 @@ class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonListVi
     inner class PokemonListViewHolder(private val binding : ItemPokemonBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(pokemon : PokemonListModel) {
             with(binding) {
+                val id = Helper.getImageIDFromURL(pokemon.url)
+
                 tvPokemonName.text = pokemon.name
                 Glide.with(itemView.context)
-                    .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + Helper.getImageIDFromURL(pokemon.url) + ".png")
+                    .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png")
                     .into(ivPokemon)
 
-                itemView.setOnClickListener { view ->
-                    view.findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailActivity::class.java)
+                    intent.putExtra(DetailActivity.EXTRA_ID, id)
+                    itemView.context.startActivity(intent)
                 }
             }
 

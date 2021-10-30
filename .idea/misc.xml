@@ -11,12 +11,14 @@
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/drawable/ic_logo.xml" value="0.20729166666666668" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/drawable/line.xml" value="0.29957264957264956" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/font/poppins_semi_bold.xml" value="0.3731481481481482" />
+        <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/activity_detail.xml" value="0.33" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/fragment_detail.xml" value="0.25" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/fragment_home.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/fragment_splash.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/fragment_stats.xml" value="0.33" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/item_pokemon.xml" value="0.33" />
-        <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/item_type_pokemon.xml" value="0.9" />
+        <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/item_type_pokemon.xml" value="0.5" />
         <entry key="..\:/Users/Sahir/AndroidStudioProjects/Pokelab/app/src/main/res/layout/pokemon_item.xml" value="0.36666666666666664" />
       </map>
     </option>

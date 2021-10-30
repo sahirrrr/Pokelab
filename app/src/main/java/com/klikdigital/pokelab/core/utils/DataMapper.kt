@@ -31,19 +31,25 @@ object DataMapper {
         }
     }
 
-    fun mapDetailPokemonResponseToEntities(data: DetailPokemonResponse) : DetailPokemonEntity {
-        return with(data) {
+    fun mapDetailPokemonResponseToEntities(data: DetailPokemonResponse) : List<DetailPokemonEntity> {
+        val detailPokemon = ArrayList<DetailPokemonEntity>()
+        with(data) {
+            detailPokemon.add(
                 DetailPokemonEntity(
                     id, name, height, weight, sprites, abilities, stats, types
                 )
+            )
         }
+        return detailPokemon
     }
 
-    fun mapDetailPokemonEntitiesToDomain(data: DetailPokemonEntity) : DetailPokemonModel {
-        return with(data) {
-            DetailPokemonModel(
-                id, name, height, weight, sprites, abilities, stats, types
-            )
+    fun mapDetailPokemonEntitiesToDomain(data: List<DetailPokemonEntity>) : List<DetailPokemonModel> {
+        return data.map {
+            with(it) {
+                DetailPokemonModel(
+                    id, name, height, weight, sprites, abilities, stats, types
+                )
+            }
         }
     }
 }

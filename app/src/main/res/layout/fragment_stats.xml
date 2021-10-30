@@ -1,14 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.stats.StatsFragment">
+    tools:context=".ui.detail.StatsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Hp Pokemon -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_hp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#9B9B9B"
+        android:text="@string/hp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_pokemon_hp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="170dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:text="@string/pokemon_hp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_hp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:max="100"
+        tools:progress="45"
+        app:layout_constraintTop_toTopOf="@id/tv_pokemon_hp"
+        app:layout_constraintStart_toEndOf="@id/tv_pokemon_hp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_hp"/>
+
+    <!-- Attack Pokemon -->
+    <TextView
+        android:id="@+id/tv_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#9B9B9B"
+        android:text="@string/attack"
+        app:layout_constraintTop_toBottomOf="@id/tv_hp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="170dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:text="@string/pokemon_attack"
+        app:layout_constraintTop_toBottomOf="@id/tv_hp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_attack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:max="100"
+        tools:progress="60"
+        app:layout_constraintTop_toTopOf="@id/tv_pokemon_attack"
+        app:layout_constraintStart_toEndOf="@id/tv_pokemon_attack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_attack"/>
+
+    <!-- Defense Pokemon -->
+    <TextView
+        android:id="@+id/tv_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#9B9B9B"
+        android:text="@string/defense"
+        app:layout_constraintTop_toBottomOf="@id/tv_attack"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="170dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:text="@string/pokemon_defense"
+        app:layout_constraintTop_toBottomOf="@id/tv_attack"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_defense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:max="100"
+        tools:progress="54"
+        app:layout_constraintTop_toTopOf="@id/tv_pokemon_defense"
+        app:layout_constraintStart_toEndOf="@id/tv_pokemon_defense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_defense"/>
+
+    <!-- Special Attack Pokemon -->
+    <TextView
+        android:id="@+id/tv_special_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#9B9B9B"
+        android:text="@string/special_attack"
+        app:layout_constraintTop_toBottomOf="@id/tv_defense"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_special_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="170dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:text="@string/pokemon_special_attack"
+        app:layout_constraintTop_toBottomOf="@id/tv_defense"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_special_attack"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:max="100"
+        tools:progress="60"
+        app:layout_constraintTop_toTopOf="@id/tv_pokemon_special_attack"
+        app:layout_constraintStart_toEndOf="@id/tv_pokemon_special_attack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_special_attack"/>
+
+    <!-- Special Defense Pokemon -->
+    <TextView
+        android:id="@+id/tv_special_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#9B9B9B"
+        android:text="@string/special_defense"
+        app:layout_constraintTop_toBottomOf="@id/tv_special_attack"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_special_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="170dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:text="@string/pokemon_special_defense"
+        app:layout_constraintTop_toBottomOf="@id/tv_special_attack"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_special_defense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:max="100"
+        tools:progress="38"
+        app:layout_constraintTop_toTopOf="@id/tv_pokemon_special_defense"
+        app:layout_constraintStart_toEndOf="@id/tv_pokemon_special_defense"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_special_defense"/>
+
+    <!-- Special Defense Pokemon -->
+    <TextView
+        android:id="@+id/tv_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#9B9B9B"
+        android:text="@string/speed"
+        app:layout_constraintTop_toBottomOf="@id/tv_special_defense"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_pokemon_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="170dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:text="@string/pokemon_speed"
+        app:layout_constraintTop_toBottomOf="@id/tv_special_defense"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_speed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:max="100"
+        tools:progress="38"
+        app:layout_constraintTop_toTopOf="@id/tv_pokemon_speed"
+        app:layout_constraintStart_toEndOf="@id/tv_pokemon_speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_speed"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

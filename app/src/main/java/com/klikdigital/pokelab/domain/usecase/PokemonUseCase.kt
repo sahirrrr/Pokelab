@@ -9,5 +9,5 @@ interface PokemonUseCase {
 
     fun getPokemonList() : Flowable<Resource<List<PokemonListModel>>>
 
-    fun getDetailPokemon(id: String) : Flowable<Resource<DetailPokemonModel>>
+    fun getDetailPokemon(id: String) : Flowable<Resource<List<DetailPokemonModel>>>
 }

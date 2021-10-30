@@ -16,4 +16,16 @@
     <string name="weight">Weight</string>
     <string name="tab_text_1">Stats</string>
     <string name="tab_text_2">Evolution</string>
+    <string name="hp">Hp</string>
+    <string name="pokemon_hp">45</string>
+    <string name="attack">Attack</string>
+    <string name="pokemon_attack">60</string>
+    <string name="pokemon_defense">54</string>
+    <string name="defense">Defense</string>
+    <string name="special_attack">Special Attack</string>
+    <string name="pokemon_special_attack">23</string>
+    <string name="pokemon_special_defense">38</string>
+    <string name="special_defense">Special Defense</string>
+    <string name="speed">Speed</string>
+    <string name="pokemon_speed">40</string>
 </resources>
