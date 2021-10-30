@@ -2,9 +2,12 @@ package com.klikdigital.pokelab.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.klikdigital.pokelab.R
 import com.klikdigital.pokelab.core.utils.Helper
 import com.klikdigital.pokelab.databinding.ItemPokemonBinding
 import com.klikdigital.pokelab.domain.model.PokemonListModel
@@ -38,7 +41,12 @@ class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonListVi
                 Glide.with(itemView.context)
                     .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + Helper.getImageIDFromURL(pokemon.url) + ".png")
                     .into(ivPokemon)
+
+                itemView.setOnClickListener { view ->
+                    view.findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
+                }
             }
+
         }
     }
 

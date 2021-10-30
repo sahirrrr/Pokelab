@@ -30,12 +30,6 @@ class HomeFragment : Fragment() {
         pokemonList()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-        root = null
-    }
-
     private fun pokemonList() {
       val pokemonListAdapter = PokemonListAdapter()
       viewModel.getPokemonList().observe(viewLifecycleOwner, { pokemonList ->
@@ -61,5 +55,11 @@ class HomeFragment : Fragment() {
             this?.setHasFixedSize(true)
             this?.adapter = pokemonListAdapter
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+        root = null
     }
 }

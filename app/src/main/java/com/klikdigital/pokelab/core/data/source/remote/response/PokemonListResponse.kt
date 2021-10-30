@@ -4,6 +4,12 @@ import com.google.gson.annotations.SerializedName
 
 data class PokemonListResponse(
 
+	@field:SerializedName("results")
+	val results: List<ResultsItem?>
+)
+
+data class ResultsItem(
+
 	@field:SerializedName("name")
 	val name: String,
 

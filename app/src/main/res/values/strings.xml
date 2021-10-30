@@ -5,4 +5,15 @@
     <string name="pokelab">Pokelab</string>
     <string name="bulbasaur">bulbasaur image</string>
     <string name="pokemon_bulbasaur">Bulbasaur</string>
+    <string name="pokeball">pokeball</string>
+    <string name="dots">dots</string>
+    <string name="back_arrow">back arrow</string>
+    <string name="pokemon_type">Grass</string>
+    <string name="pokemon_bulbasaur_id">#001</string>
+    <string name="pokemon_height">0.70 cm</string>
+    <string name="pokemon_weight">6.8 kg</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="tab_text_1">Stats</string>
+    <string name="tab_text_2">Evolution</string>
 </resources>
