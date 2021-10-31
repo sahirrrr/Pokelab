@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.recyclerview.widget.GridLayoutManager
 import com.klikdigital.pokelab.core.data.Resource
 import com.klikdigital.pokelab.databinding.FragmentHomeBinding
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pokemonList()
+
     }
 
     @SuppressLint("NotifyDataSetChanged")

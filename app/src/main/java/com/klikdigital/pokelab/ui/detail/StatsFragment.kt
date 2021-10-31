@@ -1,6 +1,8 @@
 package com.klikdigital.pokelab.ui.detail
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,7 +45,7 @@ class StatsFragment : Fragment() {
     private fun pokemonDetail(id: String) {
         // get Activity progress bar for Fragment
         val progressBar = activity?.findViewById<ProgressBar>(R.id.progress_bar)
-        viewLifecycleOwner.lifecycleScope.launch {
+        Handler(Looper.getMainLooper()).postDelayed({
             viewModel.getDetailPokemon(id).observe(viewLifecycleOwner, { detailPokemon ->
                 if (detailPokemon != null) {
                     when (detailPokemon) {
@@ -78,6 +80,12 @@ class StatsFragment : Fragment() {
                         }
                         is Resource.Error -> {
                             progressBar?.visibility = View.GONE
+                            binding?.tvHp?.visibility = View.GONE
+                            binding?.tvAttack?.visibility = View.GONE
+                            binding?.tvDefense?.visibility = View.GONE
+                            binding?.tvSpecialAttack?.visibility = View.GONE
+                            binding?.tvSpecialDefense?.visibility = View.GONE
+                            binding?.tvSpeed?.visibility = View.GONE
                             binding?.ivEmptyState?.visibility = View.VISIBLE
                             binding?.tvEmptyStateTitle?.visibility = View.VISIBLE
                             binding?.tvEmptyStateDecs?.visibility = View.VISIBLE
@@ -86,7 +94,7 @@ class StatsFragment : Fragment() {
                     }
                 }
             })
-        }
+        }, 200)
     }
 
     override fun onDestroyView() {

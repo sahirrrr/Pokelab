@@ -87,4 +87,10 @@ dependencies {
     implementation "org.koin:koin-core:2.1.6"
     implementation "org.koin:koin-android:2.1.6"
     implementation "org.koin:koin-android-viewmodel:2.1.6"
+
+    /* Color Palette Api */
+    implementation "androidx.palette:palette-ktx:1.0.0"
+
+    /* Status bar Util */
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
 }

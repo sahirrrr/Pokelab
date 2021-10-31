@@ -65,7 +65,12 @@ class EvolutionFragment : Fragment() {
                         }
                         is Resource.Error -> {
                             progressBar?.visibility = View.GONE
-                            Toast.makeText(requireContext(), "Something went wrong, please try again", Toast.LENGTH_SHORT).show()
+                            binding?.icForward1?.visibility = View.GONE
+                            binding?.icForward2?.visibility = View.GONE
+                            binding?.viewLine?.visibility = View.GONE
+                            binding?.ivEmptyState?.visibility = View.VISIBLE
+                            binding?.tvEmptyStateTitle?.visibility = View.VISIBLE
+                            binding?.tvEmptyStateDecs?.visibility = View.VISIBLE
                         }
                         is Resource.Loading -> progressBar?.visibility = View.VISIBLE
                     }

@@ -1,8 +1,12 @@
 package com.klikdigital.pokelab.core.utils
 
+import android.graphics.Bitmap
+import androidx.palette.graphics.Palette
 import java.util.*
 
 object Helper {
+
+    fun createPaletteSync(bitmap: Bitmap): Palette = Palette.from(bitmap).generate()
 
     fun lvlConverter(level: Int) : String {
         return "Lvl $level"

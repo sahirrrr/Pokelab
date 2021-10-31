@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView
+    android:id="@+id/card_pokemon"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,12 +8,24 @@
     android:layout_marginStart="16dp"
     android:layout_width="165dp"
     android:layout_height="125dp"
-    app:cardBackgroundColor="#E5E5E5"
     app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <!-- Pokeball Image -->
+        <ImageView
+            android:id="@+id/iv_pokeball"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/pokeball"
+            android:src="@drawable/ic_pokeball"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <!-- Pokemon Image -->
         <ImageView

@@ -12,6 +12,7 @@
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/bg_type"
+        android:backgroundTint="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

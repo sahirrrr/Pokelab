@@ -5,6 +5,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.jaeger.library.StatusBarUtil
 import com.klikdigital.pokelab.databinding.ActivityMainBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class HomeActivity : AppCompatActivity() {
 
         //transparent status bar
         setTransparentStatusBar()
+        StatusBarUtil.setLightMode(this)
     }
 
     private fun Activity.setTransparentStatusBar() {

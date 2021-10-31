@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/act_detail"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -28,7 +29,8 @@
         android:src="@drawable/ic_shape"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/back_arrow" />
+        android:contentDescription="@string/back_arrow"
+        app:tint="@color/white" />
 
     <!-- Icon Back -->
     <ImageView
@@ -40,7 +42,8 @@
         android:src="@drawable/ic_back_arrow"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/back_arrow" />
+        android:contentDescription="@string/back_arrow"
+        app:tint="@color/black" />
 
     <!-- Pokemon Name -->
     <TextView
@@ -206,6 +209,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@color/white"
+        app:tabIndicatorColor="#2966DB"
         app:tabTextColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/view_line"
         app:layout_constraintStart_toStartOf="parent"

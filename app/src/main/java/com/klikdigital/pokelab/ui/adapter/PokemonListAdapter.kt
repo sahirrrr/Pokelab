@@ -1,10 +1,16 @@
 package com.klikdigital.pokelab.ui.adapter
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.CustomTarget
+import com.bumptech.glide.request.transition.Transition
+import com.klikdigital.pokelab.R
 import com.klikdigital.pokelab.core.utils.Helper
 import com.klikdigital.pokelab.databinding.ItemPokemonBinding
 import com.klikdigital.pokelab.domain.model.PokemonListModel
@@ -40,8 +46,18 @@ class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonListVi
 
                 tvPokemonName.text = Helper.capitalizeFirstWord(pokemon.name)
                 Glide.with(itemView.context)
+                    .asBitmap()
                     .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png")
-                    .into(ivPokemon)
+                    .into(object : CustomTarget<Bitmap>(){
+                        override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?) {
+                            binding.ivPokemon.setImageBitmap(resource)
+
+                            val vibrant = Helper.createPaletteSync(resource).vibrantSwatch
+                            vibrant?.rgb?.let { ivPokeball.setColorFilter(it) }
+                            ivPokeball.alpha = 0.18f
+                        }
+                        override fun onLoadCleared(placeholder: Drawable?) {}
+                    })
 
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailActivity::class.java)
