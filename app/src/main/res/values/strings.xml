@@ -28,4 +28,8 @@
     <string name="special_defense">Special Defense</string>
     <string name="speed">Speed</string>
     <string name="pokemon_speed">40</string>
+    <string name="level">Lvl 16</string>
+    <string name="empty_state">empty_state</string>
+    <string name="empty_state_title">Oops!</string>
+    <string name="empty_state_decs">Something went wrong,\n please try again</string>
 </resources>

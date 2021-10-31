@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.klikdigital.pokelab.core.data.source.remote.response.TypesItem
+import com.klikdigital.pokelab.core.utils.Helper
 import com.klikdigital.pokelab.databinding.ItemTypePokemonBinding
 
 class PokemonTypeAdapter : RecyclerView.Adapter<PokemonTypeAdapter.PokemonTypeViewHolder>() {
@@ -31,7 +32,7 @@ class PokemonTypeAdapter : RecyclerView.Adapter<PokemonTypeAdapter.PokemonTypeVi
     inner class PokemonTypeViewHolder(private val binding : ItemTypePokemonBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(pokemonType: TypesItem) {
             with(binding) {
-                    tvPokemonName.text = pokemonType.type.name
+                    tvPokemonType.text = Helper.capitalizeFirstWord(pokemonType.type.name)
             }
         }
     }

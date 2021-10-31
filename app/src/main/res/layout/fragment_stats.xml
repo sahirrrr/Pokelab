@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.detail.StatsFragment">
 
-    <!-- Hp Pokemon -->
+    <!-- Hp Text -->
     <TextView
         android:id="@+id/tv_hp"
         android:layout_width="wrap_content"
@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Hp Pokemon -->
     <TextView
         android:id="@+id/tv_pokemon_hp"
         android:layout_width="wrap_content"
@@ -34,6 +35,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Hp Bar -->
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress_hp"
         android:layout_width="0dp"
@@ -49,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_hp"/>
 
-    <!-- Attack Pokemon -->
+    <!-- Attack Text -->
     <TextView
         android:id="@+id/tv_attack"
         android:layout_width="wrap_content"
@@ -63,6 +65,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_hp"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Attack Pokemon -->
     <TextView
         android:id="@+id/tv_pokemon_attack"
         android:layout_width="wrap_content"
@@ -76,6 +79,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_hp"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Attack Bar -->
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress_attack"
         android:layout_width="0dp"
@@ -91,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_attack"/>
 
-    <!-- Defense Pokemon -->
+    <!-- Defense Text -->
     <TextView
         android:id="@+id/tv_defense"
         android:layout_width="wrap_content"
@@ -105,6 +109,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_attack"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Defense Pokemon -->
     <TextView
         android:id="@+id/tv_pokemon_defense"
         android:layout_width="wrap_content"
@@ -118,6 +123,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_attack"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Defense Bar -->
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress_defense"
         android:layout_width="0dp"
@@ -133,7 +139,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_defense"/>
 
-    <!-- Special Attack Pokemon -->
+    <!-- Special Attack Text -->
     <TextView
         android:id="@+id/tv_special_attack"
         android:layout_width="wrap_content"
@@ -147,6 +153,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_defense"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Special Attack Pokemon -->
     <TextView
         android:id="@+id/tv_pokemon_special_attack"
         android:layout_width="wrap_content"
@@ -160,6 +167,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_defense"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Special Attack Bar -->
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress_special_attack"
         android:layout_width="0dp"
@@ -175,7 +183,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_special_attack"/>
 
-    <!-- Special Defense Pokemon -->
+    <!-- Special Defense Text -->
     <TextView
         android:id="@+id/tv_special_defense"
         android:layout_width="wrap_content"
@@ -189,6 +197,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_special_attack"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Special Defense Pokemon -->
     <TextView
         android:id="@+id/tv_pokemon_special_defense"
         android:layout_width="wrap_content"
@@ -202,6 +211,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_special_attack"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Special Defense Bar -->
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress_special_defense"
         android:layout_width="0dp"
@@ -217,7 +227,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_special_defense"/>
 
-    <!-- Special Defense Pokemon -->
+    <!-- Speed Text -->
     <TextView
         android:id="@+id/tv_speed"
         android:layout_width="wrap_content"
@@ -231,6 +241,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_special_defense"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Speed Pokemon -->
     <TextView
         android:id="@+id/tv_pokemon_speed"
         android:layout_width="wrap_content"
@@ -244,6 +255,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_special_defense"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Speed Bar -->
     <com.google.android.material.progressindicator.LinearProgressIndicator
         android:id="@+id/progress_speed"
         android:layout_width="0dp"
@@ -258,5 +270,46 @@
         app:layout_constraintStart_toEndOf="@id/tv_pokemon_speed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/tv_pokemon_speed"/>
+
+    <!-- Empty State Image -->
+    <ImageView
+        android:id="@+id/iv_empty_state"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_emptystate"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/empty_state" />
+
+    <!-- Empty State Title -->
+    <TextView
+        android:id="@+id/tv_empty_state_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        android:text="@string/empty_state_title"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty_state"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Empty State Desc -->
+    <TextView
+        android:id="@+id/tv_empty_state_decs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:text="@string/empty_state_decs"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_empty_state_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.klikdigital.pokelab.ui.detail
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +8,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.annotation.StringRes
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
@@ -20,9 +20,13 @@ import com.klikdigital.pokelab.ui.adapter.PokemonTypeAdapter
 import com.klikdigital.pokelab.ui.adapter.SectionsPagerAdapter
 import org.koin.android.viewmodel.ext.android.viewModel
 import com.klikdigital.pokelab.core.utils.Helper
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import org.koin.android.scope.scope
 
-
+@DelicateCoroutinesApi
 class DetailActivity : AppCompatActivity() {
 
     companion object {
@@ -61,18 +65,23 @@ class DetailActivity : AppCompatActivity() {
             }.attach()
         }
 
+        // get id from ItemView RecyclerView List Pokemon
         val id = intent.getStringExtra(EXTRA_ID)
         if (id != null) {
             pokemonDetail(id)
         }
 
+        // Back Pressed
         binding?.icBack?.setOnClickListener {
             onBackPressed()
         }
+
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun pokemonDetail(id: String) {
         val pokemonTypeAdapter = PokemonTypeAdapter()
+
         viewModel.getDetailPokemon(id).observe(this, { detailPokemon ->
             if (detailPokemon != null) {
                 when(detailPokemon) {
@@ -97,7 +106,9 @@ class DetailActivity : AppCompatActivity() {
                     }
                     is Resource.Error -> {
                         binding?.progressBar?.visibility = View.GONE
-                        Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+                        binding?.ivEmptyState?.visibility = View.VISIBLE
+                        binding?.tvEmptyStateTitle?.visibility = View.VISIBLE
+                        binding?.tvEmptyStateDecs?.visibility = View.VISIBLE
                     }
                     is Resource.Loading -> binding?.progressBar?.visibility = View.VISIBLE
                 }

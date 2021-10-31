@@ -1,11 +1,11 @@
 package com.klikdigital.pokelab.ui.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import com.klikdigital.pokelab.core.data.Resource
 import com.klikdigital.pokelab.databinding.FragmentHomeBinding
@@ -26,10 +26,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         pokemonList()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun pokemonList() {
       val pokemonListAdapter = PokemonListAdapter()
       viewModel.getPokemonList().observe(viewLifecycleOwner, { pokemonList ->
@@ -43,7 +43,9 @@ class HomeFragment : Fragment() {
                   }
                   is Resource.Error -> {
                       binding?.progressBar?.visibility = View.GONE
-                      Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
+                      binding?.ivEmptyState?.visibility = View.VISIBLE
+                      binding?.tvEmptyStateTitle?.visibility = View.VISIBLE
+                      binding?.tvEmptyStateDecs?.visibility = View.VISIBLE
                   }
                   is Resource.Loading -> binding?.progressBar?.visibility = View.VISIBLE
               }

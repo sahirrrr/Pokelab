@@ -1,14 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.evolution.EvolutionFragment">
+    tools:context=".ui.detail.EvolutionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Pokemon Image 1 -->
+    <ImageView
+        android:id="@+id/iv_pokemon_1"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/bulbasaur"
+        tools:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Pokemon Name 1 -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_pokemon_name_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        tools:text="@string/pokemon_bulbasaur"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_pokemon_1"
+        app:layout_constraintStart_toStartOf="@id/iv_pokemon_1"
+        app:layout_constraintTop_toBottomOf="@id/iv_pokemon_1" />
 
-</FrameLayout>
+    <!-- Icon Level -->
+    <ImageView
+        android:id="@+id/ic_forward_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_forward_arrow"
+        android:contentDescription="@string/back_arrow"
+        app:layout_constraintTop_toTopOf="@id/iv_pokemon_1"
+        app:layout_constraintStart_toEndOf="@id/iv_pokemon_1"
+        app:layout_constraintEnd_toStartOf="@id/iv_pokemon_2"
+        app:layout_constraintBottom_toTopOf="@id/tv_level_1"
+        app:tint="#9B9B9B" />
+
+    <!-- Pokemon First Level Up -->
+    <TextView
+        android:id="@+id/tv_level_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        tools:text="@string/level"
+        app:layout_constraintTop_toBottomOf="@id/ic_forward_1"
+        app:layout_constraintStart_toEndOf="@id/iv_pokemon_1"
+        app:layout_constraintEnd_toStartOf="@id/iv_pokemon_2"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pokemon_1"/>
+
+    <!-- Pokemon Image 2 -->
+    <ImageView
+        android:id="@+id/iv_pokemon_2"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/bulbasaur"
+        tools:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Pokemon Name 2 -->
+    <TextView
+        android:id="@+id/tv_pokemon_name_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        tools:text="@string/pokemon_bulbasaur"
+        app:layout_constraintTop_toBottomOf="@id/iv_pokemon_2"
+        app:layout_constraintStart_toStartOf="@id/iv_pokemon_2"
+        app:layout_constraintEnd_toEndOf="@id/iv_pokemon_2"/>
+
+    <!-- Line -->
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/line"
+        android:backgroundTint="#9B9B9B"
+        app:layout_constraintTop_toBottomOf="@id/tv_pokemon_name_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Pokemon Image 3 -->
+    <ImageView
+        android:id="@+id/iv_pokemon_3"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="16dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/bulbasaur"
+        tools:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toTopOf="@id/view_line"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Pokemon Name 3 -->
+    <TextView
+        android:id="@+id/tv_pokemon_name_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        tools:text="@string/pokemon_bulbasaur"
+        app:layout_constraintTop_toBottomOf="@id/iv_pokemon_3"
+        app:layout_constraintStart_toStartOf="@id/iv_pokemon_3"
+        app:layout_constraintEnd_toEndOf="@id/iv_pokemon_3"/>
+
+    <!-- Icon Level -->
+    <ImageView
+        android:id="@+id/ic_forward_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_forward_arrow"
+        android:contentDescription="@string/back_arrow"
+        app:layout_constraintTop_toTopOf="@id/iv_pokemon_3"
+        app:layout_constraintStart_toEndOf="@id/iv_pokemon_3"
+        app:layout_constraintEnd_toStartOf="@id/iv_pokemon_4"
+        app:layout_constraintBottom_toTopOf="@id/tv_level_2"
+        app:tint="#9B9B9B" />
+
+    <!-- Pokemon Second Level Up -->
+    <TextView
+        android:id="@+id/tv_level_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        tools:text="@string/level"
+        app:layout_constraintTop_toBottomOf="@id/ic_forward_2"
+        app:layout_constraintStart_toEndOf="@id/iv_pokemon_3"
+        app:layout_constraintEnd_toStartOf="@id/iv_pokemon_4"
+        app:layout_constraintBottom_toBottomOf="@id/iv_pokemon_3"/>
+
+    <!-- Pokemon Image 4 -->
+    <ImageView
+        android:id="@+id/iv_pokemon_4"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/bulbasaur"
+        tools:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toTopOf="@id/view_line"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Pokemon Name 4 -->
+    <TextView
+        android:id="@+id/tv_pokemon_name_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        tools:text="@string/pokemon_bulbasaur"
+        app:layout_constraintTop_toBottomOf="@id/iv_pokemon_4"
+        app:layout_constraintStart_toStartOf="@id/iv_pokemon_4"
+        app:layout_constraintEnd_toEndOf="@id/iv_pokemon_4"/>
+
+    <!-- Empty State Image -->
+    <ImageView
+        android:id="@+id/iv_empty_state"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_emptystate"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/empty_state" />
+
+    <!-- Empty State Title -->
+    <TextView
+        android:id="@+id/tv_empty_state_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/black"
+        android:text="@string/empty_state_title"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty_state"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Empty State Desc -->
+    <TextView
+        android:id="@+id/tv_empty_state_decs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:text="@string/empty_state_decs"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tv_empty_state_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

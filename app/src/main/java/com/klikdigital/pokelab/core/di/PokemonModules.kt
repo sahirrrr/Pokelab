@@ -1,6 +1,7 @@
 package com.klikdigital.pokelab.core.di
 
 import androidx.room.Room
+import com.klikdigital.pokelab.BuildConfig
 import com.klikdigital.pokelab.core.data.PokemonRepository
 import com.klikdigital.pokelab.core.data.source.local.LocalDataSource
 import com.klikdigital.pokelab.core.data.source.local.room.PokemonDB
@@ -36,7 +37,7 @@ val networkModule = module {
     }
     single {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://pokeapi.co/")
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(get())

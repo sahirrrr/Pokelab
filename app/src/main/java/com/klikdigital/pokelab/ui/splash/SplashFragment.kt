@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.klikdigital.pokelab.R
 import com.klikdigital.pokelab.databinding.FragmentSplashBinding
@@ -22,9 +21,9 @@ class SplashFragment : Fragment() {
         root = binding?.root
 
         Handler(Looper.getMainLooper()).postDelayed({
+            // Navigate to Home Fragment
             findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
         }, 3000)
-
         return root
     }
 

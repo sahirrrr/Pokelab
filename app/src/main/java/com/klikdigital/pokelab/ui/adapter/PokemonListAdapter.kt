@@ -9,6 +9,7 @@ import com.klikdigital.pokelab.core.utils.Helper
 import com.klikdigital.pokelab.databinding.ItemPokemonBinding
 import com.klikdigital.pokelab.domain.model.PokemonListModel
 import com.klikdigital.pokelab.ui.detail.DetailActivity
+import kotlinx.coroutines.DelicateCoroutinesApi
 
 class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonListViewHolder>() {
 
@@ -35,9 +36,9 @@ class PokemonListAdapter : RecyclerView.Adapter<PokemonListAdapter.PokemonListVi
     inner class PokemonListViewHolder(private val binding : ItemPokemonBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(pokemon : PokemonListModel) {
             with(binding) {
-                val id = Helper.getImageIDFromURL(pokemon.url)
+                val id = Helper.getImageIDFromURLPokemon(pokemon.url)
 
-                tvPokemonName.text = pokemon.name
+                tvPokemonName.text = Helper.capitalizeFirstWord(pokemon.name)
                 Glide.with(itemView.context)
                     .load("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png")
                     .into(ivPokemon)

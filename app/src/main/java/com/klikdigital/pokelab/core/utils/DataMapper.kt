@@ -1,11 +1,17 @@
 package com.klikdigital.pokelab.core.utils
 
 import com.klikdigital.pokelab.core.data.source.local.entity.DetailPokemonEntity
+import com.klikdigital.pokelab.core.data.source.local.entity.EvolutionPokemonEntity
 import com.klikdigital.pokelab.core.data.source.local.entity.PokemonListEntity
+import com.klikdigital.pokelab.core.data.source.local.entity.PokemonSpeciesEntity
 import com.klikdigital.pokelab.core.data.source.remote.response.DetailPokemonResponse
+import com.klikdigital.pokelab.core.data.source.remote.response.EvolutionPokemonResponse
 import com.klikdigital.pokelab.core.data.source.remote.response.PokemonListResponse
+import com.klikdigital.pokelab.core.data.source.remote.response.PokemonSpeciesResponse
 import com.klikdigital.pokelab.domain.model.DetailPokemonModel
+import com.klikdigital.pokelab.domain.model.EvolutionPokemonModel
 import com.klikdigital.pokelab.domain.model.PokemonListModel
+import com.klikdigital.pokelab.domain.model.PokemonSpeciesModel
 
 object DataMapper {
     fun mapPokemonListResponseToEntitites(data : PokemonListResponse) : List<PokemonListEntity> {
@@ -52,4 +58,50 @@ object DataMapper {
             }
         }
     }
+
+    fun mapEvolutionPokemonResponseToEntities(data: EvolutionPokemonResponse) : List<EvolutionPokemonEntity> {
+        val evolutionPokemon = ArrayList<EvolutionPokemonEntity>()
+        with(data) {
+            evolutionPokemon.add(
+                EvolutionPokemonEntity(
+                    id, chain
+                )
+            )
+        }
+        return evolutionPokemon
+    }
+
+    fun mapEvolutionPokemonEntitiesToDomain(data: List<EvolutionPokemonEntity>) : List<EvolutionPokemonModel> {
+        return data.map {
+            with(it) {
+                EvolutionPokemonModel(
+                    id, chain
+                )
+            }
+        }
+    }
+
+    fun mapPokemonSpeciesResponseToEntities(data: PokemonSpeciesResponse) : List<PokemonSpeciesEntity> {
+        val pokemonSpecies = ArrayList<PokemonSpeciesEntity>()
+        with(data) {
+            pokemonSpecies.add(
+                PokemonSpeciesEntity(
+                    id, evolutionChain
+                )
+            )
+        }
+        return pokemonSpecies
+    }
+
+    fun mapPokemonSpeciesEntitiesToDomain(data: List<PokemonSpeciesEntity>) : List<PokemonSpeciesModel> {
+        return data.map {
+            with(it) {
+                PokemonSpeciesModel(
+                    id, evolutionChain
+                )
+            }
+        }
+    }
+
+
 }
