@@ -1,6 +1,6 @@
 package com.klikdigital.pokelab.di
 
-import com.klikdigital.pokelab.domain.usecase.PokemonInteractor
+import  com.klikdigital.pokelab.domain.usecase.PokemonInteractor
 import com.klikdigital.pokelab.domain.usecase.PokemonUseCase
 import com.klikdigital.pokelab.ui.detail.DetailViewModel
 import com.klikdigital.pokelab.ui.home.HomeViewModel
