@@ -28,9 +28,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         pokemonList()
-
     }
 
+    // test
     @SuppressLint("NotifyDataSetChanged")
     private fun pokemonList() {
       val pokemonListAdapter = PokemonListAdapter()

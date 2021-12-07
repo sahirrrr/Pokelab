@@ -20,6 +20,4 @@ interface ApiService {
 
     @GET("{url}")
     fun getEvolutionPokemon(@Path("url") url: String) : Flowable<EvolutionPokemonResponse>
-
-
 }
